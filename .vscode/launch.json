@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Yarn Test",
+      "runtimeExecutable": "yarn",
+      "args": ["test"],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "cwd": "${workspaceFolder}/packages/orval"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Current Test File",
+      "runtimeExecutable": "yarn",
+      "args": [
+        "test",
+        "${file}" // <-- Refers to the currently open file in the editor
+      ],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
