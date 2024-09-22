@@ -97,6 +97,7 @@ export const writeSplitTagsMode = async ({
         if (schemasPath && needSchema) {
           const schemasData = header + generateModelsInline(builder.schemas);
 
+          console.log('outputFile', fs);
           await fs.outputFile(schemasPath, schemasData);
         }
 
@@ -152,6 +153,7 @@ export const writeSplitTagsMode = async ({
           tag,
           implementationFilename,
         );
+        console.log('outputFile 1', fs);
         await fs.outputFile(implementationPath, implementationData);
 
         const mockPath = output.mock
@@ -166,6 +168,7 @@ export const writeSplitTagsMode = async ({
           : undefined;
 
         if (mockPath) {
+          console.log('outputFile 2', fs);
           await fs.outputFile(mockPath, mockData);
         }
 

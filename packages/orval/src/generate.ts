@@ -44,6 +44,7 @@ export const generateSpec = async (
   }
 
   const writeSpecBuilder = await importSpecs(workspace, options);
+  console.log(writeSpecBuilder);
   await writeSpecs(writeSpecBuilder, workspace, options, projectName);
 };
 

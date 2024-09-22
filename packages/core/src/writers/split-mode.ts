@@ -20,6 +20,16 @@ export const writeSplitMode = async ({
   needSchema,
 }: WriteModeProps): Promise<string[]> => {
   try {
+    console.group('test');
+    console.log('debugging info');
+    console.log({
+      builder,
+      output,
+      specsName,
+      header,
+      needSchema,
+    });
+    console.groupEnd();
     const { filename, dirname, extension } = getFileInfo(output.target, {
       backupFilename: camel(builder.info.title),
       extension: output.fileExtension,

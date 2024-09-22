@@ -24,6 +24,7 @@ const generate = async (
     options,
   );
 
+  console.log(normalizedOptions)
   if (options?.watch) {
     startWatcher(
       options?.watch,

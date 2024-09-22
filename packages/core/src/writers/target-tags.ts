@@ -97,6 +97,7 @@ export const generateTargetForTags = (
 ) => {
   const isAngularClient = options.client === OutputClient.ANGULAR;
 
+  console.log(builder.operations);
   const allTargetTags = Object.values(builder.operations)
     .map(addDefaultTagIfEmpty)
     .reduce(
