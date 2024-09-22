@@ -13,7 +13,7 @@
       "env": {
         "NODE_ENV": "test"
       },
-      "cwd": "${workspaceFolder}/packages/orval"
+      "cwd": "${workspaceFolder}"
     },
     {
       "type": "node",
@@ -28,7 +28,25 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "env": {
-        "NODE_ENV": "test"
+        "NODE_ENV": "test",
+        "PATH": "${workspaceFolder}/node_modules/.bin:${env:PATH}"
+      },
+      "cwd": "${workspaceFolder}/packages/orval"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Dev Server",
+      "runtimeExecutable": "yarn",
+      "args": [
+        "dev"
+      ],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "env": {
+        "NODE_ENV": "test",
+        "PATH": "${workspaceFolder}/node_modules/.bin:${env:PATH}"
       },
       "cwd": "${workspaceFolder}"
     }
